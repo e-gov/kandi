@@ -2,7 +2,7 @@
 
 Võimalus vaadata, kas inimene on varem kandideerinud, millistel valimistel, millises erakonnas või valimisliidus ja millise tulemusega, on eeldatavalt huvipakkuv ja väärtust loov paljudele kasutajatele.
 
-"Kandideerimisajaloo teenus" on praegu Vabariigi Valimiskomisjoni (VVK) domeeninime alt pakutava lehe "Toimunud valimiste kandidaatide otsing": http://vvk.ee/arhiiv/kandidaadi-otsing/ ajakohastamise järel tekkivale avalikule teenusele. Ajakohastamise eesmärgid:
+"Kandideerimisajaloo teenus" on praegu Vabariigi Valimiskomisjoni (VVK) domeeninime alt pakutava lehe "Toimunud valimiste kandidaatide otsing": http://vvk.ee/arhiiv/kandidaadi-otsing/ ajakohastamise järel tekkiv avalik teenus. Ajakohastamise eesmärgid:
 - Tänapäevastada teenuse kasutajaliides; rakendada Valimiste infosüsteemi (VIS3) kujundusstiili;
 - Teha teenus kergestileitavaks; selleks pakkuda teenust domeeni valimised.ee alamdomeeni alt.
 - Täiendada teenuses pakutavat kandideerimisandmete hulka pärast 2019 toimunud valimiste andmetega.
