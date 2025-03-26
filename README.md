@@ -28,6 +28,8 @@ Võimalus vaadata, kas inimene on varem kandideerinud, millistel valimistel, mil
 
 6  Kasutajaliides seotakse domeeninimega kandideerimisajalugu.valimised.ee vms sarnasega.
 
+...
+
 11  Turvalisus (põhijooned)
 - Teenuses esitatavad andmed on olemuselt avalik teave, mis on ka varem (valimissündmuste lehtedel, valimistulemuste detailandmestutes) juba avaldatud. Teenus ainult annab kasutajale kergema pääsu andmeteni (otsinguvõimaluse).
 - Kasutajaliidese kood on lihtne; koodi mitteavalikustamise vajadus puudub.
