@@ -23,9 +23,9 @@ Kolm eeldatavat peamist "kasutuslugu":
 
 Lühendid ja tähistused:
 - KOV - kohaliku omavalitsuse valimised; RK - Riigikogu valimised; EP - Europarlamendi valimised
-- 1992-2019 andmetes on: valimisringkonna nimetus ja number, kandidaadi registreerimisnumber, erakond (või valimisliit), saadud hääle arv ja valimiseks osutumine/mitteosutumine (1/0)
+- 1992-2019 andmetes on: valimisringkonna nimetus ja number, kandidaadi registreerimisnumber, erakond (või valimisliit), saadud häälte arv ja valituks osutumine/mitteosutumine (1/0)
 - 2021- andmetes on: kandidaadi registreerimisnumber, erakond (või valimisliit), kandidaadi sünniaeg ja valimisringkonna nimetus
-- andmed ei erista sama ees- ja perekonnanimega isikuid. Seda on oluline arvestada eriti kandideerimiskordade andmete tõlgendamisel.
+- andmetöötlus ei erista sama ees- ja perekonnanimega isikuid. Seda on oluline arvestada eriti kandideerimiskordade andmete tõlgendamisel.
 
 Piirangud:
 - Andmed ei sisalda EP 2009 andmeid.
