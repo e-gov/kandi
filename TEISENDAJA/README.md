@@ -3,11 +3,11 @@
 Failide ALATES_1992.csv ja KANDIDEERIMISKORDI.csv saamiseks on VVK veebilehelt ja Valimiste avaandmete lehelt saadud andmeid töödeldud järgmiselt:
 
 1. Valimiste avaandmete lehelt laeti alla KOV 2021, RK 2023 ja EP 2024 kandideerimisandmed - XML-failid ELECTION_CANDIDATES.xml.
-2. XML-failid teisendati JSON-kujul - käesolevas kaustas oleva Go programmi konverter abil. Vt jaotis "konverter" allpool.
+2. XML-failid teisendati JSON-kujule - käesolevas kaustas oleva Go programmi konverter abil. Vt jaotis "konverter" allpool.
 3. jq abil teisendati JSON-failid CSV-kujule. Vastavad jq-skriptid: teisendaja_kov.sh, teisendaja_rk.sh, teisendaja_ep.sh.
 4. VVK veebilehelt laeti alla 1992-2019 valimiste kandideerimisandmete CSV-fail.
 5. Kõigis CSV-failides seati kandidaatide nimed pöördjärjestusse (s.t perekonnanimi enne eesnime).
-6. Saadud CSV-failid liideti ja sorditi.
+6. Saadud CSV-failid sidurdati ja sorditi.
 7. Kandideerimiskordade "edetabeli" saamiseks tehti vastavad teisendused (vt täpsemalt eraldi jaotises allpool).
 
 ## konverter
@@ -16,13 +16,13 @@ Go programm, mis teisendab valimiste avaandmete XML-vormingus kandidaatide faili
 
 Kasutamine:
 
-`go run . -infile <XML-faili tee> -outfile <JSON-faili tee>
+`go run . -infile <XML-faili tee> -outfile <JSON-faili tee>`
 
 Kasulikku:
 
 - `go mod init konverter` (programmi konverter alustamine)
 - `https://github.com/txix-open/goxml2json` (XML -> JSON teisendusteek)
-- `go get github.com/txix-open/goxml2json` (teegi paigaldamine)
+- `go get github.com/txix-open/goxml2json` (teegi paigaldamine) -
   VS Code Go laiendus lisab ise required laused go.mod faili
 - `./konverter` (programmi konverter täitmine) 
 
