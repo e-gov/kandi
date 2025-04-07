@@ -1,40 +1,28 @@
-# Kandideerimisajaloo teenus
+# Kandideerimisajalugu
 
-Võimalus vaadata, kas inimene on varem kandideerinud, millistel valimistel, millises erakonnas või valimisliidus ja millise tulemusega, on eeldatavalt huvipakkuv ja väärtust loov paljudele kasutajatele.
+Võimalus vaadata, kas inimene on riiklikel valimistel varem kandideerinud, on eeldatavalt huvipakkuv ja väärtust loov paljudele kasutajatele. Praegu on võimaluseks selleks killustatud:
+- Vabariigi Valimiskomisjoni (VVK) veebilehelt http://vvk.ee/arhiiv/kandidaadi-otsing/ saab pärida kandideerimisandmeid 1992-2019 (v.a 2009) valimiste kohta. Märkus: Teenus vajab ajakohastamist, kasvõi tänapäeval ebaturvaliseks peetava HTTP protokolli osas.
+- Valimiste avaandmete lehelt https://opendata.valimised.ee saab alla laadida kandideerimisandmeid 2021 ja järgnevate valimiste kohta. Andmed on valdavalt XML-vormingus ega paku ühtset koondit üle erinevate valimiste. 
 
-"Kandideerimisajaloo teenus" on praegu Vabariigi Valimiskomisjoni (VVK) domeeninime alt pakutava lehe "Toimunud valimiste kandidaatide otsing": http://vvk.ee/arhiiv/kandidaadi-otsing/ ajakohastamise järel tekkiv avalik teenus. Ajakohastamise eesmärgid:
-- Tänapäevastada teenuse kasutajaliides; rakendada Valimiste infosüsteemi (VIS3) kujundusstiili;
-- Teha teenus kergestileitavaks; selleks pakkuda teenust domeeni valimised.ee alamdomeeni alt.
-- Täiendada teenuses pakutavat kandideerimisandmete hulka pärast 2019 toimunud valimiste andmetega.
+Käesolevas repos on failid, millest isiku kandideerimisajaloo otsimine võib olla eelnimetatud võimalustest kergem:
+- ALATES_1992.csv - kandideerimised alates 1992.a kuni tänapäevani.
+- KANDIDEERIMISKORDI.csv - mitu korda isik on kandideerinud.
 
-## Tehniline kontseptsioon (avalik osa)
+Andmed põhinevad ülalnimetatud allikatest (VVK veebileht, Valimiste avaandmete leht). Andmeid on töödeldud, selle kohta vt lähemalt kaustas TEISENDAJA. Tegu on avalike andmetega, mis on ka varem juba avaldatud.
 
-1  Ajakohastatud teenus saab koosnema kahest komponendist: a) andmefail; b) kasutajaliides.
+Isiku kandideerimiste otsing: Ava fail ALATES_1992.csv; Ctrl+F ja otsi isiku nime või nimeosa järgi.
 
-2  Andmefail sisaldab teenuse kuvatavaid kandideerimisajaloo andmeid.
-- Faili struktuuri aluseks võetakse senise teenuse andmefail (CSV).
-- CSV-fail teisendatakse JSON-failiks ja edaspidi kasutatakse JSON-formaati.
-- Faili täiendatakse pärast 2019 toimunud valimiste andmetega.
-- Andmefail on suhteliselt staatiline. Faili täiendatakse pärast igakordsete valimiste lõppemist.
+Kandidaatide sirvimine: Ava fail ALATES_1992.csv ja keri kuva.
 
-3  Kasutajaliides teostatakse Angulari veebiraamistikus.
-- Kasutajaliidesele rakendatakse VIS3 kujundusstiili.
+Isikute võrdlus kandideerimiskordade järgi: Ava fail KANDIDEERIMISKORDI.csv.
 
-4  Andmefaili ja kasutajaliidese koodi hoitakse GitHub-is, RIA kontrolli all oleva organisatsiooni e-gov (https://github.com/e-gov) all, omaette repos https://github.com/e-gov/kandi.
-- Repo kood publitseeritakse avaliku koodina, MIT litsentsiga.
-- Repo andmefail publitseeritakse avaandmetena. Reposse lisatakse vastav selgitus ja litsents.
+Lühendid ja tähistused:
+- KOV - kohaliku omavalitsuse valimised; RK - Riigikogu valimised; EP - Europarlamendi valimised
+- 1992-2019 andmetes on valimisringkonna nimetus ja number, kandidaadi registreerimisnumber, erakond (või valimisliit), saadud hääle arv ja valimiseks osutumine/mitteosutumine (1/0)
+- 2021- andmetes on kandidaadi registreerimisnumber, erakond (või valimisliit), kandidaadi sünniaeg ja valimisringkonna nimetus
+- andmed ei erista sama ees- ja perekonnanimega isikuid (Oluline: Arvestada eriti kandideerimiskordade andmete tõlgendamisel).
 
-5  Kasutajaliides publitseeritakse GitHub publitseerimisteenuse GitHub Pages abil (https://pages.github.com/).
+Piirangud:
+- Andmed ei sisalda EP 2009 andmeid.
 
-6  Kasutajaliides seotakse domeeninimega kandideerimisajalugu.valimised.ee vms sarnasega.
 
-...
-
-11  Turvalisus (põhijooned)
-- Teenuses esitatavad andmed on olemuselt avalik teave, mis on ka varem (valimissündmuste lehtedel, valimistulemuste detailandmestutes) juba avaldatud. Teenus ainult annab kasutajale kergema pääsu andmeteni (otsinguvõimaluse).
-- Kasutajaliidese kood on lihtne; koodi mitteavalikustamise vajadus puudub.
-
-12  Jõudlus
-- Kohaliku omavalitsuse valimistel võib olla kuni 10 000 kandidaati. Teistel valimistel on kandidaate vähem. Kandideerimiste ajaloo fail võib seega sisaldada suurusjärgus 100 000 kandideerimisfakti andmeid.
-- Lihtsaima kasuliku teenuse (MVP) saamise prioriteedist lähtudes rakendame kogu andmefaili laadimist kasutajaliidesesse. S.t teenusel puudub serveripoolne töötlus. Teenuse testimisel selgitada välja, kas selline tööviis tagab piisava jõudluse ja reaktsiooniaja. Kui mitte, siis tuleb kontseptsioon uuesti läbi vaadata (nt kaaluda andmestu jagamist failideks).
-- Teenuse kasutustihedust saab eeldada kujunevat suhteliselt madalaks. Teadasaamine, kas inimene on varem kandideerinud, millistel valimistel, millises erakonnas või valimisliidus ja millise tulemusega, on eeldatavalt huvipakkuv ja väärtust loov paljudele kasutajatele. Samas ei ole ajaloo-otsing otseselt ühegi menetlustoimingu osa või eeldus.
